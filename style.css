@@ -1028,6 +1028,10 @@ li {
   justify-content: center;
   justify-content: left;
 }
+.item .user__info .user__img {
+  width: 37px;
+  height: 37px;
+}
 .item .user__info .user__data {
   display: flex;
   flex-direction: column;
@@ -1048,7 +1052,11 @@ li {
   color: #BDBDBD;
   line-height: 0;
 }
-.item .user__info .user__data .user__additinal-inf li {
+.item .user__info .user__data .user__additinal-inf ul {
+  -webkit-padding-start: 10px;
+          padding-inline-start: 10px;
+}
+.item .user__info .user__data .user__additinal-inf ul li {
   list-style: inside;
 }
 .item p {
