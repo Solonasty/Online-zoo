@@ -1,46 +1,46 @@
-// burger
+// BURGER
 
-const burger = document.querySelector(".burger");
-const popupBurger = document.querySelector(".popup_burger");
-const body = document.body;
+let burger = document.querySelector(".burger");
+let popupBurger = document.querySelector(".popup_burger");
+let body = document.body;
 
-// Клонируем меню, чтобы задать свои стили для мобильной версии
-const menu = document.querySelector(".menu").cloneNode(1);
+// Clone menu for creating styles for mobile
+let menu = document.querySelector(".menu").cloneNode(1);
 
-// При клике на иконку hamb вызываем ф-ию hambHandler
+// Add to icon burger action hambHandler
 burger.addEventListener("click", hambHandler);
 
-// Выполняем действия при клике ..
+// Click actions:
 function hambHandler(e) {
   e.preventDefault();
-  // Переключаем стили элементов при клике
+  // Change styles on click
   popupBurger.classList.toggle("popup_open");
   burger.classList.toggle("popup_active");
   body.classList.toggle("noscroll");
   renderPopup();
 }
 
-// Здесь мы рендерим элементы в наш попап
+// Copy nav to burger
 function renderPopup() {
   popupBurger.appendChild(menu);
 }
 
-// Код для закрытия меню при нажатии на ссылку
-const links = Array.from(menu.children);
+// Code for closing menu
+let links = Array.from(menu.children);
 
-// Для каждого элемента меню при клике вызываем ф-ию
+// For each clicked menu item call the function closeOnClick
 links.forEach((link) => {
   link.addEventListener("click", closeOnClick);
 });
 
-// Закрытие попапа при клике на меню
+// Closing the pop-up on click on the menu
 function closeOnClick() {
   popupBurger.classList.remove("popup_open");
   burger.classList.remove("active");
   body.classList.remove("noscroll");
 }
 
-// carousel
+// CAROUSEL
 
 let block = document.querySelectorAll('.animals__block');
 let currentBlock = 0;
@@ -128,7 +128,7 @@ function hideElements() {
 
 hideElements();
 
-// testimonials
+// TESTIMONIALS
 
 function testimonialsSlider() {
 
@@ -182,12 +182,13 @@ function testimonialsSlider() {
 
       $('.popup').fadeIn();
       $('.popup').addClass("shadow");
-
+      $('body').css({overflow: "hidden"});
     });
 
     $('.close').click(function() {
       $('.popup').fadeOut('fast');
       $('.popup').removeClass("shadow");
+      $('body').css({overflow: ""});
     });
 
       matchMedia('only screen and (min-width:800px)').addEventListener('change', function() {
@@ -218,4 +219,3 @@ function testimonialsSlider() {
 }
 
 testimonialsSlider();
-
