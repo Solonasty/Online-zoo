@@ -889,6 +889,10 @@ max-width: 100%;
     .user__info {
         @include flexRow();
         justify-content: left;
+        .user__img {
+            width: 37px;
+            height: 37px;
+        }
         .user__data {
              @include flexColumn();
             align-items: flex-start;
@@ -902,8 +906,11 @@ max-width: 100%;
                 @include flexRow();
                 color: #BDBDBD;
                 line-height: 0;
-                li {
-                    list-style:inside;
+                ul {
+                    padding-inline-start: 10px;
+                    li {
+                        list-style:inside;
+                    }
                 }
             }
         }
